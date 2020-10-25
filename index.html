@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<base target="_top">
+<?!= HtmlService.createHtmlOutputFromFile('css').getContent(); ?>
+</head>
+<body>
+
+<div class="bg"></div>
+<div id="burger">
+<!--ハンバーガーメニューのボタン-->
+  <slide>
+    <a id="home" href="#">
+      <span>Home</span>
+    </a>
+    <a id="about" href="#">
+      <span>About</span>
+    </a>
+    <a id="contact" href="#">
+      <span>Contact</span>
+    </a>
+  </slide>
+  <div id="page-wrap"></div>
+</div>
+
+<div id="app">
+<h1>{{ tocTitle }}</h1><br><br>
+
+
+<!--
+ <nav>
+  <ul class="main-nav">
+    <li><a href="#" class="logo">{{ tocDescription }}</a></li>
+    <li v-for="list in lists"><a :href="list.url">{{ list.title }}</a></li>
+  </ul>
+</nav>
+-->
+
+<div id="cs">
+<div class="wrapper glid">
+	<div class="item">
+    <h2>{{m1}}</h2>
+            <carousel v-bind:autoplay="true" v-bind:loop="true" v-bind:speed=2000 v-bind:navigation-enabled="true" v-bind:per-page=1>
+            <slide>
+            <img src="http://drive.google.com/uc?export=view&id=1gR45rbpLxdTMCl5yD-ZDkJd3-fnAErvx" class="image-vw">
+            </slide>
+            <slide>
+            <img src="http://drive.google.com/uc?export=view&id=1gR45rbpLxdTMCl5yD-ZDkJd3-fnAErvx" class="image-vw">
+            </slide>
+            <slide>
+            <img src="http://drive.google.com/uc?export=view&id=1gR45rbpLxdTMCl5yD-ZDkJd3-fnAErvx" class="image-vw">
+            </slide>
+            </carousel>
+    </div>
+	<div class="item">
+    <h2>{{m2}}</h2>
+            <carousel v-bind:autoplay="true" v-bind:loop="true" v-bind:speed=2000 v-bind:navigation-enabled="true" v-bind:per-page=1>
+            <slide>
+            <img src="http://drive.google.com/uc?export=view&id=1gR45rbpLxdTMCl5yD-ZDkJd3-fnAErvx" class="image-vw">
+            </slide>
+            <slide>
+            <img src="http://drive.google.com/uc?export=view&id=1gR45rbpLxdTMCl5yD-ZDkJd3-fnAErvx" class="image-vw">
+            </slide>
+            <slide>
+            <img src="http://drive.google.com/uc?export=view&id=1gR45rbpLxdTMCl5yD-ZDkJd3-fnAErvx" class="image-vw">
+            </slide>
+            </carousel>
+    </div>
+	<div class="item">
+    <h2>{{m3}}</h2>
+            <carousel v-bind:autoplay="true" v-bind:loop="true" v-bind:speed=2000 v-bind:navigation-enabled="true" v-bind:per-page=1>
+            <slide>
+            <img src="http://drive.google.com/uc?export=view&id=1gR45rbpLxdTMCl5yD-ZDkJd3-fnAErvx" class="image-vw">
+            </slide>
+            <slide>
+            <img src="http://drive.google.com/uc?export=view&id=1gR45rbpLxdTMCl5yD-ZDkJd3-fnAErvx" class="image-vw">
+            </slide>
+            <slide>
+            <img src="http://drive.google.com/uc?export=view&id=1gR45rbpLxdTMCl5yD-ZDkJd3-fnAErvx" class="image-vw">
+            </slide>
+            </carousel>
+    </div>
+
+</div>
+</div>
+
+
+</div>
+
+<?!= HtmlService.createHtmlOutputFromFile('js').getContent(); ?>
+</body>
+</html>

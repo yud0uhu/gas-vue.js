@@ -1,0 +1,48 @@
+<!-- CDNで読み込み -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.16/vue.min.js"></script>
+<script src="https://cdn.rawgit.com/SSENSE/vue-carousel/6823411d/dist/vue-carousel.min.js"></script>
+<!-- ハンバーガーメニュー -->
+<script src="https://cdn.jsdelivr.net/npm/vue-burger-menu@2.0.3/dist/vue-burger-menu.umd.js"></script>
+<!-- CDNで読み込み -->
+
+<script>
+var app = new Vue({
+  el: '#app',
+  data: {
+    tocTitle: 'Chitose Food & Takeout Serch!!',
+    tocDescription: 'ジャンルで選ぶ',
+    lists: [
+      { title: 'Japanese',
+        url: 'https://tonari-it.com/gas-web-app-javascript/' },
+      { title: 'Westerne',
+        url: 'https://tonari-it.com/gas-button-event-javascript/' }, 
+      { title: 'Chinese',
+        url: 'https://tonari-it.com/gas-web-app-vue-js/' }
+    ],
+    
+    m1: 'Japanese Food',
+    m2: 'Westene Food',
+    m3: 'Chinese Food',
+
+  }
+  
+});
+
+/* ハンバーガーメニュー */
+const {Slide} = window['vue-burger-menu'];
+Vue.component('slide', Slide);
+
+var burger = new Vue({
+  el: '#burger'
+});
+
+/* カルーセル */
+var cs = new Vue({
+  el: "#cs",
+  components: {
+    'carousel': VueCarousel.Carousel,
+    'slide': VueCarousel.Slide
+  },
+});
+</script>

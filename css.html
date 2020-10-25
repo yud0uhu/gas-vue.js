@@ -1,0 +1,75 @@
+<style>
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+h1 { 
+	font: bold 300% Consolas, Monaco, monospace;
+	border-right: .1em solid black;
+	width: 16.5em; 
+	width: 31ch;
+	margin: 2em 1em;
+	white-space: nowrap;
+	overflow: hidden;
+	-webkit-animation: typing 3.5s steps(21, end),
+	           blink-caret .5s step-end infinite alternate;
+}
+/* 見出し2 */
+h2{
+	position: relative;
+	padding:0 0 5px 0;
+	font-size:20px;
+	border-bottom:#BFBFBF dotted 1px;
+}
+h2:first-letter{
+	font-size:40px;
+	color:#ff0000;
+}
+
+/* 画面幅の50%の幅で画像を表示 */
+image-vw {
+  width : 50vw ; 
+}
+
+/* カルーセル */
+.VueCarousel-slide {
+  height:100px;
+  color:#FFF;
+  background:#59ecff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right:1px solid #FFF;
+  box-sizing:border-box; /* パディングとボーダーを幅と高さに含める */
+  font-size:12px;
+  text-align:center;
+}
+
+/* よこ並び */
+.grid {
+ display: grid;
+ gap: 26px;
+ glid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+ margin-top: 6%;
+ margin-bottom: 50px;
+ }
+
+
+/* 背景 */
+.bg{
+    /*位置の設定*/
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /*背景画像の設定*/
+    background: url(http://drive.google.com/uc?export=view&id=1WjA6WgkCDKXcGA1FE3zdunGUPcB20bmt);
+    background-size: cover;
+    background-repeat: repeat;
+
+    /*透過の設定*/
+    opacity: 0.5;
+}
+
+</style>
