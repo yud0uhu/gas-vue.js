@@ -6,8 +6,12 @@
 <script src="https://cdn.jsdelivr.net/npm/vue-burger-menu@2.0.3/dist/vue-burger-menu.umd.js"></script>
 <!-- CDNで読み込み -->
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+
+
 <script>
-var app = new Vue({
+const app = new Vue({
   el: '#app',
   data: {
     tocTitle: 'Chitose Food & Takeout Serch!!',
@@ -25,24 +29,119 @@ var app = new Vue({
     m2: 'Westene Food',
     m3: 'Chinese Food',
 
+  },
+  /* トップへ戻るボタン */
+   methods: {
+    scrollTop: function(){
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
   }
-  
 });
 
 /* ハンバーガーメニュー */
 const {Slide} = window['vue-burger-menu'];
 Vue.component('slide', Slide);
 
-var burger = new Vue({
+const burger = new Vue({
   el: '#burger'
 });
 
 /* カルーセル */
-var cs = new Vue({
+const cs = new Vue({
   el: "#cs",
   components: {
     'carousel': VueCarousel.Carousel,
     'slide': VueCarousel.Slide
   },
 });
+
+/*トップへ戻るボタン失敗
+var st = new Vue({
+  el: '#scrollTo',
+  methods: {
+    scrollTop: function(){
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+  }
+})
+*/
+
+/*スライドショー
+var slide = new Vue({
+  el: "#slide",
+  data: {
+    index: 0,
+  },
+  mounted() {
+    const images = document.getElementsByClassName('slideshow');
+    this.slideshow(images);
+    setInterval(() => {
+      this.index = this.index < images.length - 1 ? this.index + 1 : 0;
+      this.slideshow(images);
+    }, 3000);
+  },
+  methods: {
+    slideshow(images) {
+      const current = images[this.index];
+      const prev = images[this.index - 1] ? images[this.index - 1] : images[images.length - 1];
+      current.classList.add('fadein');
+      current.classList.remove('fadeout');
+      prev.classList.remove('fadein');
+      prev.classList.add('fadeout');
+    }
+  }
+})
+*/
+
+// Params
+var sliderSelector = '.swiper-container',
+    options = {
+      init: false,
+      loop: true,
+      speed:800,
+      slidesPerView: 2, // or 'auto'
+      // spaceBetween: 10,
+      centeredSlides : true,
+      effect: 'coverflow', // 'cube', 'fade', 'coverflow',
+      coverflowEffect: {
+        rotate: 50, // Slide rotate in degrees
+        stretch: 0, // Stretch space between slides (in px)
+        depth: 100, // Depth offset in px (slides translate in Z axis)
+        modifier: 1, // Effect multipler
+        slideShadows : true, // Enables slides shadows
+      },
+      grabCursor: true,
+      parallax: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        1023: {
+          slidesPerView: 1,
+          spaceBetween: 0
+        }
+      },
+      // Events
+      on: {
+        imagesReady: function(){
+          this.el.classList.remove('loading');
+        }
+      }
+    };
+var mySwiper = new Swiper(sliderSelector, options);
+
+// Initialize slider
+mySwiper.init();
+
 </script>
